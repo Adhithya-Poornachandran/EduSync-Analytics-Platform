@@ -1,0 +1,120 @@
+table gold_placement_summary
+	lineageTag: 9c92d1b0-7434-47b4-ba86-8c03aea86c23
+	sourceLineageTag: [Gold_Schema].[gold_placement_summary]
+
+	column StudentID
+		dataType: string
+		lineageTag: 43043083-fa80-4154-a36d-f374ae2d8f67
+		sourceLineageTag: StudentID
+		summarizeBy: none
+		sourceColumn: StudentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: 7c6d585f-5258-43bc-af74-50232c682a70
+		sourceLineageTag: FullName
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 38d4d79d-3f9f-49d9-a825-441e13d33769
+		sourceLineageTag: Department
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalPlacementRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e4efab5-7d45-41aa-8770-bb628e0d343f
+		sourceLineageTag: TotalPlacementRecords
+		summarizeBy: sum
+		sourceColumn: TotalPlacementRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column AppliedRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e05f6cc-e413-4ebb-ab5c-61a7b5b6a6b1
+		sourceLineageTag: AppliedRecords
+		summarizeBy: sum
+		sourceColumn: AppliedRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column EligibleRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: ba400a79-8fa3-416f-b95c-5d580cc38de1
+		sourceLineageTag: EligibleRecords
+		summarizeBy: sum
+		sourceColumn: EligibleRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column InterviewRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: 3729fee6-ea07-4834-8587-81d5d3e16ae9
+		sourceLineageTag: InterviewRecords
+		summarizeBy: sum
+		sourceColumn: InterviewRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlacedRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: c8ca0c81-f20c-4dfd-b036-33f0b7a678f2
+		sourceLineageTag: PlacedRecords
+		summarizeBy: sum
+		sourceColumn: PlacedRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPlaced
+		dataType: int64
+		formatString: 0
+		lineageTag: 7371430a-8f34-4be9-a6e0-8e7f58d65206
+		sourceLineageTag: IsPlaced
+		summarizeBy: sum
+		sourceColumn: IsPlaced
+
+		annotation SummarizationSetBy = Automatic
+
+	column AveragePackageLPA
+		dataType: double
+		lineageTag: 1f848620-bdf1-46f6-ba3d-5961a7dffe4e
+		sourceLineageTag: AveragePackageLPA
+		summarizeBy: sum
+		sourceColumn: AveragePackageLPA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HighestPackageLPA
+		dataType: double
+		lineageTag: 96374867-7654-4923-b602-482665fe7bef
+		sourceLineageTag: HighestPackageLPA
+		summarizeBy: sum
+		sourceColumn: HighestPackageLPA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gold_placement_summary = entity
+		mode: directLake
+		source
+			entityName: gold_placement_summary
+			schemaName: Gold_Schema
+			expressionSource: 'DirectLake - Edusync_warehouse'
+

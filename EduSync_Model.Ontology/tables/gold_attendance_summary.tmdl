@@ -1,0 +1,76 @@
+table gold_attendance_summary
+	lineageTag: f4f17731-9dfe-4cb1-9870-9fcc689b7c63
+	sourceLineageTag: e847ea9d-47a0-494c-b11d-7f8767263741
+
+	column StudentID
+		dataType: string
+		lineageTag: f9d31674-728b-4d70-8370-7e9967958a09
+		sourceLineageTag: 9bbceb9c-da83-4624-9e48-184c75fbc707
+		sourceColumn: StudentID
+
+	column FullName
+		dataType: string
+		lineageTag: 023a969c-9929-460b-aebb-d7a34f320f12
+		sourceLineageTag: d84d9395-7698-44af-8348-79a17d6a3aed
+		sourceColumn: FullName
+
+	column Department
+		dataType: string
+		lineageTag: 4265d37a-9158-49de-80e2-eff24ff3119d
+		sourceLineageTag: 13d24d2d-1150-40b1-a954-fcb8e6a2623d
+		sourceColumn: Department
+
+	column TotalAttendanceRecords
+		dataType: int64
+		lineageTag: 7ba5672d-0560-4290-8aa5-47543fa5fb85
+		sourceLineageTag: e2e9806f-2921-4ffe-a465-4b9e5dbdfaf0
+		sourceColumn: TotalAttendanceRecords
+
+	column TotalClassesHeld
+		dataType: int64
+		lineageTag: 0b202f85-139c-4045-88fa-313324216232
+		sourceLineageTag: ab8087b4-e259-4299-8ac3-55de5669639b
+		sourceColumn: TotalClassesHeld
+
+	column TotalClassesAttended
+		dataType: int64
+		lineageTag: 8485d2be-45ba-4fa9-9ee3-062d5a9c2e3e
+		sourceLineageTag: 349007e5-24b1-4519-9ea0-e1004e39f189
+		sourceColumn: TotalClassesAttended
+
+	column TotalClassesMissed
+		dataType: int64
+		lineageTag: 152fa606-a976-486e-aeba-49500531202e
+		sourceLineageTag: 5122ac72-f73e-428e-bddd-84b5ae8f0c2c
+		sourceColumn: TotalClassesMissed
+
+	column OverallAttendancePercentage
+		dataType: double
+		lineageTag: dc28b981-9cdc-432c-9ab4-e5b4511962e5
+		sourceLineageTag: 3faaa9f8-dc30-4390-a8e8-86f884649a57
+		sourceColumn: OverallAttendancePercentage
+
+	column AttendanceRisk
+		dataType: string
+		lineageTag: 83fd4db7-236c-47bf-a980-99a96ed006da
+		sourceLineageTag: c7c03516-2bac-4e6e-9f6f-2020d18828a3
+		sourceColumn: AttendanceRisk
+
+	partition gold_attendance_summary-partition = entity
+		mode: directQuery
+		source
+			entityName: gold_attendance_summary
+			expressionSource: 'DirectQuery to AS - e9e3e186-ecf0-42c7-a19a-cc0b2bedf512/d5c2c796-ff6a-48c8-9e80-7b65a466b4bb'
+
+		annotation ONT_WorkspaceId = e9e3e186-ecf0-42c7-a19a-cc0b2bedf512
+
+		annotation ONT_ItemId = d5c2c796-ff6a-48c8-9e80-7b65a466b4bb
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = EduSync_Model
+
+		annotation ONT_WorkspaceName = EduSync
+
+		annotation ONT_PinnedAtUtc = 2026-10-19T17:55:09.6605917+00:00
+

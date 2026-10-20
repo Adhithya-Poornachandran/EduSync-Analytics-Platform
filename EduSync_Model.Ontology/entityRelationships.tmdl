@@ -1,0 +1,27 @@
+entityRelationship student_has_attendence
+	label: student_has_attendence
+	lineageTag: 6ebb393d-5361-4c8c-98cb-e6a8aaa3bb45
+	fromEntity: gold_student_performance
+	toEntity: gold_attendance_summary
+
+	backingConfiguration
+		relationship: gold_student_performance_gold_attendance_summary
+
+entityRelationship student_has_fee
+	label: student_has_fee
+	lineageTag: 8cd73593-cc54-4031-a270-ab5ded8ed068
+	fromEntity: gold_student_performance
+	toEntity: gold_fee_summary
+
+	backingConfiguration
+		relationship: gold_student_performance_gold_fee_summary
+
+entityRelationship student_has_placement
+	label: student_has_placement
+	lineageTag: 875c2a96-7304-4304-94aa-af8e0a1ae8a4
+	fromEntity: gold_student_performance
+	toEntity: gold_placement_summary
+
+	backingConfiguration
+		relationship: gold_student_performance_gold_placement_summary
+

@@ -1,0 +1,12 @@
+entity gold_student_performance
+	lineageTag: 2bee7342-23a4-4beb-a30e-bf90b3355b32
+	backingTable: gold_student_performance
+	keyProperty: StudentID
+
+	property StudentID
+		dataType: string
+		lineageTag: 9f3502a3-3593-43df-912b-9a35f8ac4d76
+
+		backingConfiguration
+			valueColumn: gold_student_performance.StudentID
+

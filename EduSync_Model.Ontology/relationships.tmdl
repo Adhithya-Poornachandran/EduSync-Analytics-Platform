@@ -1,0 +1,12 @@
+relationship gold_student_performance_gold_attendance_summary
+	fromColumn: gold_student_performance.StudentID
+	toColumn: gold_attendance_summary.StudentID
+
+relationship gold_student_performance_gold_fee_summary
+	fromColumn: gold_student_performance.StudentID
+	toColumn: gold_fee_summary.StudentID
+
+relationship gold_student_performance_gold_placement_summary
+	fromColumn: gold_student_performance.StudentID
+	toColumn: gold_placement_summary.StudentID
+

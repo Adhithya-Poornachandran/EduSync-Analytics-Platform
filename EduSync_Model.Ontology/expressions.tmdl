@@ -1,0 +1,9 @@
+expression 'DirectQuery to AS - e9e3e186-ecf0-42c7-a19a-cc0b2bedf512/d5c2c796-ff6a-48c8-9e80-7b65a466b4bb' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/WORKSPACE_NAME_PLACEHOLDER", "EduSync_Model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 49f3f9e6-0669-40ad-b056-6ab2f1853461
+

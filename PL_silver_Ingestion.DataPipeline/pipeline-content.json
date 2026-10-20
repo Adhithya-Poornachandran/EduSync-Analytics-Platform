@@ -1,0 +1,143 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "items": {
+            "value": "@pipeline().parameters.tableconfig",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "Copy",
+              "typeProperties": {
+                "source": {
+                  "type": "LakehouseTableSource",
+                  "datasetSettings": {
+                    "type": "LakehouseTable",
+                    "typeProperties": {
+                      "schema": {
+                        "value": "@item().sourceSchema",
+                        "type": "Expression"
+                      },
+                      "table": {
+                        "value": "@item().sourceTable",
+                        "type": "Expression"
+                      }
+                    },
+                    "schema": [],
+                    "linkedService": {
+                      "name": "edusync_Lakehouse",
+                      "properties": {
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "artifactId": "4f43236e-bbf8-a382-43f1-cc0c99abfbbc",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000",
+                          "rootFolder": "Tables"
+                        },
+                        "annotations": []
+                      }
+                    },
+                    "annotations": []
+                  }
+                },
+                "sink": {
+                  "type": "DataWarehouseSink",
+                  "tableOption": "autoCreate",
+                  "allowCopyCommand": true,
+                  "copyCommandSettings": {},
+                  "writeBehavior": "Insert",
+                  "datasetSettings": {
+                    "type": "DataWarehouseTable",
+                    "typeProperties": {
+                      "schema": {
+                        "value": "@item().sinkSchema",
+                        "type": "Expression"
+                      },
+                      "table": {
+                        "value": "@item().sinkTable",
+                        "type": "Expression"
+                      }
+                    },
+                    "schema": [],
+                    "linkedService": {
+                      "name": "Edusync_warehouse",
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "9269fc26-17ba-899d-436d-966e93da28ba",
+                          "endpoint": "gsvcxzspzcsenhtsx2qbgloj7a-q3q6h2pq5tdufim2zqfsx3pvci.datawarehouse.fabric.microsoft.com",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000"
+                        },
+                        "annotations": []
+                      }
+                    },
+                    "annotations": []
+                  }
+                },
+                "translator": {
+                  "type": "TabularTranslator",
+                  "typeConversion": true,
+                  "typeConversionSettings": {
+                    "allowDataTruncation": true,
+                    "treatBooleanAsNumber": false
+                  }
+                },
+                "enableStaging": true
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Copy_Silver_To_Warehouse",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "PL_Silver_To_Warehouse",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "tableconfig": {
+        "type": "array",
+        "defaultValue": [
+          {
+            "sourceSchema": "Silver_Schema",
+            "sourceTable": "silver_students",
+            "sinkSchema": "dbo",
+            "sinkTable": "silver_students"
+          },
+          {
+            "sourceSchema": "Silver_Schema",
+            "sourceTable": "silver_attendance",
+            "sinkSchema": "dbo",
+            "sinkTable": "silver_attendance"
+          },
+          {
+            "sourceSchema": "Silver_Schema",
+            "sourceTable": "silver_marks",
+            "sinkSchema": "dbo",
+            "sinkTable": "silver_marks"
+          },
+          {
+            "sourceSchema": "Silver_Schema",
+            "sourceTable": "silver_fees",
+            "sinkSchema": "dbo",
+            "sinkTable": "silver_fees"
+          },
+          {
+            "sourceSchema": "Silver_Schema",
+            "sourceTable": "silver_placements",
+            "sinkSchema": "dbo",
+            "sinkTable": "silver_placements"
+          }
+        ]
+      }
+    }
+  }
+}

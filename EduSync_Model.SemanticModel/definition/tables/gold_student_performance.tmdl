@@ -1,0 +1,109 @@
+table gold_student_performance
+	lineageTag: 6ad72927-8fb0-4d89-bb3d-87c8b5bf19bd
+	sourceLineageTag: [Gold_Schema].[gold_student_performance]
+
+	column StudentID
+		dataType: string
+		lineageTag: b9c017f2-fa33-4c9b-a813-e15e98706fc2
+		sourceLineageTag: StudentID
+		summarizeBy: none
+		sourceColumn: StudentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: 9cc59ee5-7a50-4a5f-8c91-0ef87c17ebbb
+		sourceLineageTag: FullName
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 08a16d19-bba4-4a98-a73b-7ebd18d74eca
+		sourceLineageTag: Department
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column JoinYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fa0779e-6a30-404b-8ec5-f729db729331
+		sourceLineageTag: JoinYear
+		summarizeBy: sum
+		sourceColumn: JoinYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalSubjects
+		dataType: int64
+		formatString: 0
+		lineageTag: b6604a13-deb4-4298-921d-7f91492d9a4a
+		sourceLineageTag: TotalSubjects
+		summarizeBy: sum
+		sourceColumn: TotalSubjects
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubjectsPassed
+		dataType: int64
+		formatString: 0
+		lineageTag: 8a4302bd-6553-4cf5-9081-b1bcd92eab01
+		sourceLineageTag: SubjectsPassed
+		summarizeBy: sum
+		sourceColumn: SubjectsPassed
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubjectsFailed
+		dataType: int64
+		formatString: 0
+		lineageTag: 220f5040-1dcc-4dbc-b34e-3b0c38e32602
+		sourceLineageTag: SubjectsFailed
+		summarizeBy: sum
+		sourceColumn: SubjectsFailed
+
+		annotation SummarizationSetBy = Automatic
+
+	column AveragePercentage
+		dataType: double
+		lineageTag: df7d4ade-a697-4b23-b175-fbae1c92175d
+		sourceLineageTag: AveragePercentage
+		summarizeBy: sum
+		sourceColumn: AveragePercentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PassRatePercentage
+		dataType: double
+		lineageTag: 1231490a-ab3f-4960-95ce-3e990316f110
+		sourceLineageTag: PassRatePercentage
+		summarizeBy: sum
+		sourceColumn: PassRatePercentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PerformanceStatus
+		dataType: string
+		lineageTag: 8302a25d-05fe-4c00-9010-9a7237830b56
+		sourceLineageTag: PerformanceStatus
+		summarizeBy: none
+		sourceColumn: PerformanceStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_student_performance = entity
+		mode: directLake
+		source
+			entityName: gold_student_performance
+			schemaName: Gold_Schema
+			expressionSource: 'DirectLake - Edusync_warehouse'
+

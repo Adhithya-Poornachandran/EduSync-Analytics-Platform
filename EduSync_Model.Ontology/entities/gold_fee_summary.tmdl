@@ -1,0 +1,12 @@
+entity gold_fee_summary
+	lineageTag: 9fc1c2d9-cafe-46d2-8dc9-32c43b8e88f6
+	backingTable: gold_fee_summary
+	keyProperty: StudentID
+
+	property StudentID
+		dataType: string
+		lineageTag: 32c2529e-762e-4e2b-86cb-48283ce0ef02
+
+		backingConfiguration
+			valueColumn: gold_fee_summary.StudentID
+

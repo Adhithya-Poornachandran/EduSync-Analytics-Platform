@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "EduSync_Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a466b4bb-7b65-9e80-48c8-ff6ad5c2c796"
+  }
+}

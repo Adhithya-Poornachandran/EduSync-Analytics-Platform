@@ -1,0 +1,12 @@
+entity gold_placement_summary
+	lineageTag: 9820e075-9d0a-49f3-80f8-aeabd2ed255d
+	backingTable: gold_placement_summary
+	keyProperty: StudentID
+
+	property StudentID
+		dataType: string
+		lineageTag: cfae2235-5b32-4f1b-b27a-175f3bfe62f0
+
+		backingConfiguration
+			valueColumn: gold_placement_summary.StudentID
+

@@ -1,0 +1,110 @@
+table gold_fee_summary
+	lineageTag: 584628fb-73a9-4d83-a79e-9d120b708fe5
+	sourceLineageTag: [Gold_Schema].[gold_fee_summary]
+
+	column StudentID
+		dataType: string
+		lineageTag: 488296f1-3b88-4c68-a9fa-ad8aa694bf65
+		sourceLineageTag: StudentID
+		summarizeBy: none
+		sourceColumn: StudentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: decce8c5-865b-471d-99c3-20241368594a
+		sourceLineageTag: FullName
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: e8b46658-3484-48b9-902b-9875de9c24e5
+		sourceLineageTag: Department
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalFeeRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: 77a3a1e8-7fc5-41fe-be6e-1d5896fba538
+		sourceLineageTag: TotalFeeRecords
+		summarizeBy: sum
+		sourceColumn: TotalFeeRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalFeesAmount
+		dataType: double
+		lineageTag: 1b599dc4-77fe-4f9c-a987-c6a16bbb316a
+		sourceLineageTag: TotalFeesAmount
+		summarizeBy: sum
+		sourceColumn: TotalFeesAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TotalAmountPaid
+		dataType: double
+		lineageTag: 45b23d29-93a9-47b7-b0e9-c5698c30286e
+		sourceLineageTag: TotalAmountPaid
+		summarizeBy: sum
+		sourceColumn: TotalAmountPaid
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OverdueAmount
+		dataType: double
+		lineageTag: d862383c-9ad1-444e-8264-de9d2e129485
+		sourceLineageTag: OverdueAmount
+		summarizeBy: sum
+		sourceColumn: OverdueAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PaidFeeRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: d4c344e0-144d-4798-a327-b550b863169c
+		sourceLineageTag: PaidFeeRecords
+		summarizeBy: sum
+		sourceColumn: PaidFeeRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column PendingFeeRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: aa389f2e-26bc-438e-8e83-755589568010
+		sourceLineageTag: PendingFeeRecords
+		summarizeBy: sum
+		sourceColumn: PendingFeeRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column FeePaymentStatus
+		dataType: string
+		lineageTag: 8db7740c-f7e3-43bc-b463-609f77d29cbd
+		sourceLineageTag: FeePaymentStatus
+		summarizeBy: none
+		sourceColumn: FeePaymentStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_fee_summary = entity
+		mode: directLake
+		source
+			entityName: gold_fee_summary
+			schemaName: Gold_Schema
+			expressionSource: 'DirectLake - Edusync_warehouse'
+

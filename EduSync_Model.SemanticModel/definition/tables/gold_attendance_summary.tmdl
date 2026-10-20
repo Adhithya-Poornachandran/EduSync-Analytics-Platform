@@ -1,0 +1,98 @@
+table gold_attendance_summary
+	lineageTag: e847ea9d-47a0-494c-b11d-7f8767263741
+	sourceLineageTag: [Gold_Schema].[gold_attendance_summary]
+
+	column StudentID
+		dataType: string
+		lineageTag: 9bbceb9c-da83-4624-9e48-184c75fbc707
+		sourceLineageTag: StudentID
+		summarizeBy: none
+		sourceColumn: StudentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: d84d9395-7698-44af-8348-79a17d6a3aed
+		sourceLineageTag: FullName
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		lineageTag: 13d24d2d-1150-40b1-a954-fcb8e6a2623d
+		sourceLineageTag: Department
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalAttendanceRecords
+		dataType: int64
+		formatString: 0
+		lineageTag: e2e9806f-2921-4ffe-a465-4b9e5dbdfaf0
+		sourceLineageTag: TotalAttendanceRecords
+		summarizeBy: sum
+		sourceColumn: TotalAttendanceRecords
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalClassesHeld
+		dataType: int64
+		formatString: 0
+		lineageTag: ab8087b4-e259-4299-8ac3-55de5669639b
+		sourceLineageTag: TotalClassesHeld
+		summarizeBy: sum
+		sourceColumn: TotalClassesHeld
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalClassesAttended
+		dataType: int64
+		formatString: 0
+		lineageTag: 349007e5-24b1-4519-9ea0-e1004e39f189
+		sourceLineageTag: TotalClassesAttended
+		summarizeBy: sum
+		sourceColumn: TotalClassesAttended
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalClassesMissed
+		dataType: int64
+		formatString: 0
+		lineageTag: 5122ac72-f73e-428e-bddd-84b5ae8f0c2c
+		sourceLineageTag: TotalClassesMissed
+		summarizeBy: sum
+		sourceColumn: TotalClassesMissed
+
+		annotation SummarizationSetBy = Automatic
+
+	column OverallAttendancePercentage
+		dataType: double
+		lineageTag: 3faaa9f8-dc30-4390-a8e8-86f884649a57
+		sourceLineageTag: OverallAttendancePercentage
+		summarizeBy: sum
+		sourceColumn: OverallAttendancePercentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AttendanceRisk
+		dataType: string
+		lineageTag: c7c03516-2bac-4e6e-9f6f-2020d18828a3
+		sourceLineageTag: AttendanceRisk
+		summarizeBy: none
+		sourceColumn: AttendanceRisk
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_attendance_summary = entity
+		mode: directLake
+		source
+			entityName: gold_attendance_summary
+			schemaName: Gold_Schema
+			expressionSource: 'DirectLake - Edusync_warehouse'
+

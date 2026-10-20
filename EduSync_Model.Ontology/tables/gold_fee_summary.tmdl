@@ -1,0 +1,82 @@
+table gold_fee_summary
+	lineageTag: 7055ca85-1cb2-4dcb-8276-4d02a49a576d
+	sourceLineageTag: 584628fb-73a9-4d83-a79e-9d120b708fe5
+
+	column StudentID
+		dataType: string
+		lineageTag: 32c2529e-762e-4e2b-86cb-48283ce0ef02
+		sourceLineageTag: 488296f1-3b88-4c68-a9fa-ad8aa694bf65
+		sourceColumn: StudentID
+
+	column FullName
+		dataType: string
+		lineageTag: 40f62b29-96bf-4e01-a8ef-201ef53e9f0a
+		sourceLineageTag: decce8c5-865b-471d-99c3-20241368594a
+		sourceColumn: FullName
+
+	column Department
+		dataType: string
+		lineageTag: 9aa12d6c-39ed-43be-9c11-1f1552f3552a
+		sourceLineageTag: e8b46658-3484-48b9-902b-9875de9c24e5
+		sourceColumn: Department
+
+	column TotalFeeRecords
+		dataType: int64
+		lineageTag: 3fcb6d1c-5b9d-4330-9f24-9854d1d42158
+		sourceLineageTag: 77a3a1e8-7fc5-41fe-be6e-1d5896fba538
+		sourceColumn: TotalFeeRecords
+
+	column TotalFeesAmount
+		dataType: double
+		lineageTag: fab16768-3e0d-4a19-8a74-833fba685a77
+		sourceLineageTag: 1b599dc4-77fe-4f9c-a987-c6a16bbb316a
+		sourceColumn: TotalFeesAmount
+
+	column TotalAmountPaid
+		dataType: double
+		lineageTag: 26d998de-1715-4b4d-9426-7546a80894ed
+		sourceLineageTag: 45b23d29-93a9-47b7-b0e9-c5698c30286e
+		sourceColumn: TotalAmountPaid
+
+	column OverdueAmount
+		dataType: double
+		lineageTag: 00b1be2b-84b8-4650-ad2c-c4f2076dab0f
+		sourceLineageTag: d862383c-9ad1-444e-8264-de9d2e129485
+		sourceColumn: OverdueAmount
+
+	column PaidFeeRecords
+		dataType: int64
+		lineageTag: 723a1ac1-44b6-40f1-8d06-d6414e9d5717
+		sourceLineageTag: d4c344e0-144d-4798-a327-b550b863169c
+		sourceColumn: PaidFeeRecords
+
+	column PendingFeeRecords
+		dataType: int64
+		lineageTag: 526f781d-b7fa-41aa-a48f-854967e1a012
+		sourceLineageTag: aa389f2e-26bc-438e-8e83-755589568010
+		sourceColumn: PendingFeeRecords
+
+	column FeePaymentStatus
+		dataType: string
+		lineageTag: c8da5fd6-c031-4d02-bdf0-2ffc6baa4093
+		sourceLineageTag: 8db7740c-f7e3-43bc-b463-609f77d29cbd
+		sourceColumn: FeePaymentStatus
+
+	partition gold_fee_summary-partition = entity
+		mode: directQuery
+		source
+			entityName: gold_fee_summary
+			expressionSource: 'DirectQuery to AS - e9e3e186-ecf0-42c7-a19a-cc0b2bedf512/d5c2c796-ff6a-48c8-9e80-7b65a466b4bb'
+
+		annotation ONT_WorkspaceId = e9e3e186-ecf0-42c7-a19a-cc0b2bedf512
+
+		annotation ONT_ItemId = d5c2c796-ff6a-48c8-9e80-7b65a466b4bb
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = EduSync_Model
+
+		annotation ONT_WorkspaceName = EduSync
+
+		annotation ONT_PinnedAtUtc = 2026-10-19T17:55:09.6605917+00:00
+

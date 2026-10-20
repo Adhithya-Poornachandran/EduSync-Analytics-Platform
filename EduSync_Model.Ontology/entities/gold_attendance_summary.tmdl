@@ -1,0 +1,12 @@
+entity gold_attendance_summary
+	lineageTag: adde4926-06a8-4e76-9a4c-88a2c135a67f
+	backingTable: gold_attendance_summary
+	keyProperty: StudentID
+
+	property StudentID
+		dataType: string
+		lineageTag: f9d31674-728b-4d70-8370-7e9967958a09
+
+		backingConfiguration
+			valueColumn: gold_attendance_summary.StudentID
+

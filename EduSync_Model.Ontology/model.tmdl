@@ -1,0 +1,14 @@
+model Model
+
+ref table gold_attendance_summary
+ref table gold_fee_summary
+ref table gold_placement_summary
+ref table gold_student_performance
+
+ref entity gold_student_performance
+ref entity gold_attendance_summary
+ref entity gold_fee_summary
+ref entity gold_placement_summary
+
+ref namespace default
+

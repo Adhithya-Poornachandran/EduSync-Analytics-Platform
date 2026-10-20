@@ -1,0 +1,88 @@
+table gold_placement_summary
+	lineageTag: fd0e7ebd-ba69-4ee8-80b4-0b6441f19365
+	sourceLineageTag: 9c92d1b0-7434-47b4-ba86-8c03aea86c23
+
+	column StudentID
+		dataType: string
+		lineageTag: cfae2235-5b32-4f1b-b27a-175f3bfe62f0
+		sourceLineageTag: 43043083-fa80-4154-a36d-f374ae2d8f67
+		sourceColumn: StudentID
+
+	column FullName
+		dataType: string
+		lineageTag: 63a8e6cb-022f-473f-bc64-9bebd2ba42ae
+		sourceLineageTag: 7c6d585f-5258-43bc-af74-50232c682a70
+		sourceColumn: FullName
+
+	column Department
+		dataType: string
+		lineageTag: ad8f9141-731f-4b77-b118-5bcee78bc2d8
+		sourceLineageTag: 38d4d79d-3f9f-49d9-a825-441e13d33769
+		sourceColumn: Department
+
+	column TotalPlacementRecords
+		dataType: int64
+		lineageTag: aeb30d73-3f22-47ad-aed0-af02e8460ccf
+		sourceLineageTag: 8e4efab5-7d45-41aa-8770-bb628e0d343f
+		sourceColumn: TotalPlacementRecords
+
+	column AppliedRecords
+		dataType: int64
+		lineageTag: 079f094c-63ea-4211-ae2f-1413a50424eb
+		sourceLineageTag: 2e05f6cc-e413-4ebb-ab5c-61a7b5b6a6b1
+		sourceColumn: AppliedRecords
+
+	column EligibleRecords
+		dataType: int64
+		lineageTag: 306e5fcb-e84f-40db-aae7-ac3731c26b77
+		sourceLineageTag: ba400a79-8fa3-416f-b95c-5d580cc38de1
+		sourceColumn: EligibleRecords
+
+	column InterviewRecords
+		dataType: int64
+		lineageTag: 9aec115d-8568-409c-b7c0-f591d1ed85b5
+		sourceLineageTag: 3729fee6-ea07-4834-8587-81d5d3e16ae9
+		sourceColumn: InterviewRecords
+
+	column PlacedRecords
+		dataType: int64
+		lineageTag: da3809b2-8631-493f-a6f2-289e77d883b5
+		sourceLineageTag: c8ca0c81-f20c-4dfd-b036-33f0b7a678f2
+		sourceColumn: PlacedRecords
+
+	column IsPlaced
+		dataType: int64
+		lineageTag: 614cdacd-bb9a-4a09-942c-66a86666e071
+		sourceLineageTag: 7371430a-8f34-4be9-a6e0-8e7f58d65206
+		sourceColumn: IsPlaced
+
+	column AveragePackageLPA
+		dataType: double
+		lineageTag: f375b974-323f-49de-ae5f-5716f362ae76
+		sourceLineageTag: 1f848620-bdf1-46f6-ba3d-5961a7dffe4e
+		sourceColumn: AveragePackageLPA
+
+	column HighestPackageLPA
+		dataType: double
+		lineageTag: f5037b09-a24a-45f7-a6b5-8a39b27b417a
+		sourceLineageTag: 96374867-7654-4923-b602-482665fe7bef
+		sourceColumn: HighestPackageLPA
+
+	partition gold_placement_summary-partition = entity
+		mode: directQuery
+		source
+			entityName: gold_placement_summary
+			expressionSource: 'DirectQuery to AS - e9e3e186-ecf0-42c7-a19a-cc0b2bedf512/d5c2c796-ff6a-48c8-9e80-7b65a466b4bb'
+
+		annotation ONT_WorkspaceId = e9e3e186-ecf0-42c7-a19a-cc0b2bedf512
+
+		annotation ONT_ItemId = d5c2c796-ff6a-48c8-9e80-7b65a466b4bb
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = EduSync_Model
+
+		annotation ONT_WorkspaceName = EduSync
+
+		annotation ONT_PinnedAtUtc = 2026-10-19T17:55:09.6605917+00:00
+

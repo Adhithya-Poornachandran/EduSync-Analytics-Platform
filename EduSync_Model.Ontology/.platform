@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Ontology",
+    "displayName": "EduSync_Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c251582c-1ce3-97d9-47fe-319732dac3c3"
+  }
+}
