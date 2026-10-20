@@ -1045,29 +1045,6 @@ display(
 
 display(spark.table("Silver_Schema.silver_placements").limit(10))
 
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# MARKDOWN ********************
-
-# **find why 81 placement records were rejected**
-
-# CELL ********************
-
-from pyspark.sql import functions as F
-
-silver = spark.table("Silver_Schema.silver_placements")
-rejected = spark.table("Silver_Schema.silver_placements_rejected")
-
-print("Accepted:", silver.count())
-print("Rejected:", rejected.count())
-
-silver.groupBy("Status").count().orderBy("Status").show()
-rejected.groupBy("DataQualityStatus").count().show(truncate=False)
 
 # METADATA ********************
 
